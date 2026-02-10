@@ -36,8 +36,9 @@ defmodule Potion.World do
   Advances world time.
   """
   def advance_time(world, hours \\ 1) do
-    new_hour = rem(world.time.hour + hours, 24)
-    day_change = div(world.time.hour + hours, 24)
+    total_hours = world.time.hour + hours
+    new_hour = rem(total_hours, 24)
+    day_change = div(total_hours, 24)
     new_day = world.time.day + day_change
 
     new_time = %{world.time | hour: new_hour, day: new_day}

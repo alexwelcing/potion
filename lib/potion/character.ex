@@ -23,6 +23,9 @@ defmodule Potion.Character do
 
   @doc """
   Creates a new character with default attributes.
+
+  Attributes range from 0-100, with 10 being average starting values.
+  Morality ranges from 0 (evil) to 100 (good), starting at 50 (neutral).
   """
   def new(name) do
     %__MODULE__{
@@ -32,6 +35,7 @@ defmodule Potion.Character do
         intelligence: 10,
         charisma: 10,
         luck: 10,
+        wisdom: 10,
         morality: 50
       },
       skills: [],
