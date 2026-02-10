@@ -84,9 +84,15 @@ defmodule Potion.Game do
     input = IO.gets("> ") |> String.trim()
 
     case input do
-      "q" -> :quit
-      "s" -> :status
-      "" -> :continue
+      "q" ->
+        :quit
+
+      "s" ->
+        :status
+
+      "" ->
+        :continue
+
       num ->
         case Integer.parse(num) do
           {n, _} when n > 0 -> {:choose, n - 1}

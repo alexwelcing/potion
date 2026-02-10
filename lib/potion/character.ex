@@ -71,8 +71,7 @@ defmodule Potion.Character do
   Updates relationship with another character.
   """
   def update_relationship(character, other_name, change) do
-    new_relationships =
-      Map.update(character.relationships, other_name, change, &(&1 + change))
+    new_relationships = Map.update(character.relationships, other_name, change, &(&1 + change))
 
     %{character | relationships: new_relationships}
   end

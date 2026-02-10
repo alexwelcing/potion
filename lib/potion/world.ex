@@ -55,8 +55,7 @@ defmodule Potion.World do
   Updates global reputation.
   """
   def update_reputation(world, change) do
-    new_global_state =
-      Map.update!(world.global_state, :reputation, &(&1 + change))
+    new_global_state = Map.update!(world.global_state, :reputation, &(&1 + change))
 
     %{world | global_state: new_global_state}
   end

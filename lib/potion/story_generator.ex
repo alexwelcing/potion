@@ -189,8 +189,7 @@ defmodule Potion.StoryGenerator do
   defp apply_attribute_changes(game_state, choice, success) do
     change = if success, do: 1, else: -1
 
-    new_player =
-      Potion.Character.modify_attribute(game_state.player, choice.stat, change)
+    new_player = Potion.Character.modify_attribute(game_state.player, choice.stat, change)
 
     %{game_state | player: new_player}
   end

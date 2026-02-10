@@ -46,10 +46,11 @@ defmodule Potion.GameState do
   Adds an event to the story history.
   """
   def add_to_history(state, event) do
-    history_entry = Map.merge(event, %{
-      turn: state.turn_count,
-      timestamp: DateTime.utc_now()
-    })
+    history_entry =
+      Map.merge(event, %{
+        turn: state.turn_count,
+        timestamp: DateTime.utc_now()
+      })
 
     %{state | story_history: [history_entry | state.story_history]}
   end
